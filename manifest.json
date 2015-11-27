@@ -1,0 +1,28 @@
+{
+  "name": "Open Image",
+  "version": "0.1.0",
+  "description" : "Help you find the image or background image and opens in new tab.",
+  "manifest_version": 2,
+  "background" : {
+    "scripts": [
+      "/src/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["/src/open-image.js"]
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons" : {
+    "16" : "16.png",
+    "48" : "48.png",
+    "128" : "128.png"
+  }
+}
