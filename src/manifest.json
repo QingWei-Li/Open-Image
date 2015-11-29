@@ -1,17 +1,17 @@
 {
-  "name": "Open Image",
+  "name": "Open-Image",
   "version": "0.1.0",
   "description" : "Help you find the image or background image and opens in new tab.",
   "manifest_version": 2,
   "background" : {
     "scripts": [
-      "/src/background.js"
+      "background.js"
     ]
   },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["/src/open-image.js"]
+      "js": ["open-image.js"]
     }
   ],
   "permissions": [

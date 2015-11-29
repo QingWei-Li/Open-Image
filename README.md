@@ -10,3 +10,6 @@ Open image in new tab:
 
 # Download Link
 [Open-Image.crx](https://raw.githubusercontent.com/QingWei-Li/Open-Image/master/Open-Image.crx)
+
+# License
+[MIT](https://github.com/QingWei-Li/Open-Image/blob/master/LICENSE)
