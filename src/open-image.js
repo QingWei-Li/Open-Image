@@ -4,7 +4,7 @@
  */
 'use strict';
 (function () {
-  OpenImage = function() {};
+  var OpenImage = function() {};
 
   OpenImage.fn = OpenImage.prototype;
 
@@ -19,27 +19,25 @@
      * 监听鼠标右键事件（右键菜单），记录下当前 point 的坐标，并寻找当前元素的图片
      */
     window.addEventListener('contextmenu', function(e) {
-      var target = e.target || e.srcElement;
-
+      _this.target = e.target || e.srcElement;
       _this.position = {
         X: e.x,
         Y: e.y
       };
-      _this.image = _this.findImage(target);
-      _this.handlerImage(_this.image);
     }, false);
 
     /**
      * 监听 chrome 插件发送请求的事件，并作出对应响应
      */
     chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-      if (!_this.image) {
-        alert('Sorry, I can\'t find any images here :(');
-        return;
-      }
-
       switch(request) {
         case 'GET_URL':
+          _this.image = _this.findImage(_this.target);
+          _this.handlerImage(_this.image);
+          if (!_this.image) {
+            alert('Sorry, I can\'t find any images here :(');
+            return;
+          }
           sendResponse({value: _this.image});
           break;
         default:

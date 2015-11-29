@@ -38,9 +38,9 @@ gulp.task('crx', ['compress', 'copy'], function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(filePath, ['compress']);
+  gulp.watch(filePath, ['compress', 'copy']);
 });
 
-gulp.task('default', ['compress', 'watch']);
+gulp.task('default', ['copy', 'compress', 'watch']);
 
 gulp.task('build', ['crx']);
