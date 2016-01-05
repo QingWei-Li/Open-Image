@@ -162,7 +162,7 @@
       .getPropertyValue('background-image');
 
     if (/url\(\S+\)/g.test(value) && this.checkImage(element)) {
-      return value.replace(/url\([\'\"]*(\S+)[\'\"]*\)/g, '$1');
+      return value.replace(/url\([\'\"]+?(\S+)[\'\"]+?\)/g, '$1');
     }
     return;
   };

@@ -1,6 +1,6 @@
 {
   "name": "Open-Image",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description" : "Help you find the image or background image and opens in new tab.",
   "manifest_version": 2,
   "background" : {
